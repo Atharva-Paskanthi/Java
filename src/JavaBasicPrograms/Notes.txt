@@ -1,0 +1,26 @@
+Casting --> Conversion from one datatype into another datatype
+
+Widening in Java
+
+Widening casting is the automatic conversion of a smaller data type to a larger data type.
+The Java compiler performs this implicitly because the larger type can hold all possible values of the smaller type,
+so no data is lost. This is also known as implicit or automatic conversion
+
+Direction: Follows the flow: byte → short → char → int → long → float → double
+
+Narrowing in Java
+
+Narrowing casting is the explicit conversion of a larger data type to a smaller data type.
+This process is not automatic because the smaller type might not be able to hold the full range of values of the larger type,
+which can lead to data loss, truncation (losing decimal parts), or an overflow/underflow.
+
+----------------------------------------------------------------
+
+Java Naming Convention
+
+---------------------------------------------------------------
+
+Upcasting
+
+Downcasting    //Java does not support
+
