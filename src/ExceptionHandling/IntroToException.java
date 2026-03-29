@@ -11,7 +11,13 @@ public class IntroToException{
         System.out.println("Inside Main Method");
 
         IntroToException obj = new IntroToException();
+
+        try{
         obj.divide(100, 0);
+        } catch (Exception exception){
+            System.out.println("We got an Exception as below");
+            System.out.println(exception);
+        }
 
         obj.test();
 
