@@ -32,11 +32,10 @@ public class CreatingMultipleThreads extends Thread{
     @Override
     public void run() {
 
-        synchronized (CreatingMultipleThreads.this){  //acquire lock on object
+        synchronized (CreatingMultipleThreads.class){  //acquire lock on object (class-level lock)
             for(int i=0;i< 3; i++){
                 System.out.println("Count is "+i+" and Name is "+Thread.currentThread().getName());
             }
-
 
             try {
                 Thread.sleep(2000);
