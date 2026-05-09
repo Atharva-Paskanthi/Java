@@ -1,6 +1,5 @@
 package Thread;
 
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 
 public class ProducerConsumer {
@@ -8,6 +7,48 @@ public class ProducerConsumer {
     public static void main(String[] args)
         throws InterruptedException {
 
+        //Creating Object of class which has both produce() and consume() methods
+        final PC pc = new PC();
+
+        //Creating Producer Thread
+        Thread t1 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                try{
+                    pc.produce();
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        );
+
+        //Creating Consumer Thread
+        Thread t2 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                try{
+                    pc.consume();
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        );
+
+        //Start both Threads
+        t1.start();
+        t2.start();
+
+        //t1 finishes before t2
+        t1.join();
+        t2.join();
 
     }
 
@@ -35,7 +76,7 @@ public class ProducerConsumer {
 
                         //to insert the jobs in the list
                         list.add(value); //Added new Car in Showroom
-                        System.out.println("Producer producer : "+value);
+                        System.out.println("Producer produced : "+value);
                         value++;
 
                         //notify the Consumer thread that now it can start consuming
