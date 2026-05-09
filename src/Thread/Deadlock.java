@@ -1,5 +1,7 @@
 package Thread;
 
+import java.sql.SQLOutput;
+
 public class Deadlock {
 
     final static String R1 = "Hello Welcome to Scalar";
@@ -25,6 +27,8 @@ public class Deadlock {
                 //Thread T1 locking the R1 resource
                 synchronized (R1) {
                     System.out.println("Thread T1 locked -> Resource R1");
+
+                   // System.out.println("T1 is awaiting lock on R2");
                     //Thread T1 locking the R2 resource
                     synchronized (R2) {
                         System.out.println("Thread T1 locked -> Resource R2");
@@ -40,10 +44,12 @@ public class Deadlock {
             @Override
             public void run() {
                 //Thread T2 locking the R2 resource
-                synchronized (R2) {
+                synchronized (R2) { //Solution--> Lock Ordering => follow same global order R1 then R2
                     System.out.println("Thread T2 locked -> Resource R2");
+
+                    //System.out.println("T1 is awaiting lock on R2");
                     //Thread T2 locking the R1 resource
-                    synchronized (R1) {
+                    synchronized (R1) { //Solution--> Lock Ordering => follow same global order R1 then R2
                         System.out.println("Thread T2 locked -> Resource R1");
                     }//Release Resource R1
                 }//Release Resource R2
