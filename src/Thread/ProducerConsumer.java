@@ -62,17 +62,19 @@ public class ProducerConsumer {
         //Function called by Producer thread
         public void produce() throws InterruptedException{
 
-            int value = 0;
+            int value = 0 ;
 
             while(true){
                 synchronized (this){
                     //producer thread waits while the list is full
-                    if(list.size() == capacity){
+                    if(list.size() == capacity) {
                         System.out.println("Showroom is full, producer is waiting...");
 
                         //Signal any waiting Consumer before waiting
                         notify();
                         wait();
+
+                    }
 
                         //to insert the jobs in the list
                         list.add(value); //Added new Car in Showroom
@@ -84,7 +86,6 @@ public class ProducerConsumer {
 
                         //makes the working of the program easier to understand
                         Thread.sleep(1000);
-                    }
                 }
             }
 
