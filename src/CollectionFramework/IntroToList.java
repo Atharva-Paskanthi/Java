@@ -21,6 +21,8 @@ public class IntroToList {
 
 
         List<Integer> list = new ArrayList<>();
+        list.add(123);
+        list.add(84357);
 
     }
 }
