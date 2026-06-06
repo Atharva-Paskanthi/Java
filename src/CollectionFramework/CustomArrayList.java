@@ -64,7 +64,6 @@ public class CustomArrayList<E> {
     }
 
 
-
     public static void main(String[] args) {
 
         CustomArrayList cal = new CustomArrayList();
