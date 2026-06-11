@@ -1,0 +1,10 @@
+Java8 Features
+
+1) Functional Interface or Single Abstract Method Interface
+2) Lambda Expression
+3) Method Reference
+4) Stream APIs
+5) Optional Class
+
+Java made functional language => Lambda Expression
+
