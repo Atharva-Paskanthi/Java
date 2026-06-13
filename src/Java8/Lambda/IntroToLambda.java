@@ -5,6 +5,11 @@ interface Lamdaa{
     //void b();
 }
 
+interface Add{
+    void add(int a, int b);
+}
+
+
 public class IntroToLambda{ //without implementing Lambdaa interface
 
 
@@ -15,9 +20,15 @@ public class IntroToLambda{ //without implementing Lambdaa interface
 
     public static void main(String[] args) {
 
-        Lamdaa lamdaa = () -> {
-            System.out.println("Implemented Anonymously");
+        Add add = (a,b) -> {
+            System.out.println("Addition of two numbers is "+ (a+b));
         };
+        add.add(100,200);
+
+        Lamdaa lamdaa = () -> {
+            System.out.println("Implemented using lamda");
+        };
+        lamdaa.a();
 
         /*Lamdaa lamdaa = new Lamdaa() {    //without implementing Lambdaa interface
 
@@ -28,4 +39,24 @@ public class IntroToLambda{ //without implementing Lambdaa interface
         };
         lamdaa.a();*/
     }
+}
+
+
+interface Addition{
+    void add(int a, int b);
+}
+
+class AdditionClass implements Addition{
+
+
+    @Override
+    public void add(int a, int b) {
+        System.out.println("Addition of two numbers is "+ (a+b));
+    }
+
+    public static void main(String[] args) {
+        AdditionClass obj = new AdditionClass();
+        obj.add(100,300);
+    }
+
 }
