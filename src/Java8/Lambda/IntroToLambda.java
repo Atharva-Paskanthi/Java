@@ -10,7 +10,7 @@ interface Add{
 }
 
 
-public class IntroToLambda{ //without implementing Lambdaa interface
+public class IntroToLambda /*implements Lamdaa*/{ //without implementing Lambdaa interface
 
 
 /*    @Override
