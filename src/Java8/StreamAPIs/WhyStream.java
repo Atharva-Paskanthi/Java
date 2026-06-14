@@ -31,7 +31,7 @@ public class WhyStream {
         intList.add(100);
         intList.add(300);
         intList.add(400);
-        intList.add(100);
+        intList.add(300);
         intList.add(600);
         intList.add(100);
         intList.add(900);
@@ -39,6 +39,22 @@ public class WhyStream {
         intList.stream().
                 distinct().   //Lamda expression
                 forEach(a -> System.out.println("(Using Stream) Unique elements in the List are : "+a));
+
+        //Data source
+        intList.stream().
+                filter(e -> e > 100). //Intermediate Operation
+                distinct().   //Intermediate Operation
+                sorted().     //Intermediate Operation
+                forEach(a -> System.out.println("(Using Stream) Unique elements greater than 100 in the List are : "+a));
+                //Terminal Operation
+
+        long count =  intList.stream().
+                        filter(e -> e > 100). //Intermediate Operation
+                        distinct().   //Intermediate Operation
+                        sorted().     //Intermediate Operation
+                        count();   //Terminal Operation
+
+        System.out.println(count);
 
     }
 }
