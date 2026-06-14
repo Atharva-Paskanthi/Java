@@ -26,5 +26,19 @@ public class WhyStream {
 
         System.out.println("Original Collection : "+list);
 
+
+        List<Integer> intList = new ArrayList<>();
+        intList.add(100);
+        intList.add(300);
+        intList.add(400);
+        intList.add(100);
+        intList.add(600);
+        intList.add(100);
+        intList.add(900);
+
+        intList.stream().
+                distinct().   //Lamda expression
+                forEach(a -> System.out.println("(Using Stream) Unique elements in the List are : "+a));
+
     }
 }
