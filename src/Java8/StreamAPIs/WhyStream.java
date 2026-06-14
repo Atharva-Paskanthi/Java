@@ -1,11 +1,15 @@
 package Java8.StreamAPIs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class WhyStream {
 
     public static void main(String[] args) {
+
+        System.out.println("-------------------Example 1-------------------------");
 
         List<String> list = new ArrayList<>();
         list.add("ABCD");
@@ -26,6 +30,7 @@ public class WhyStream {
 
         System.out.println("Original Collection : "+list);
 
+        System.out.println("-------------------Example 2-------------------------");
 
         List<Integer> intList = new ArrayList<>();
         intList.add(100);
@@ -56,5 +61,17 @@ public class WhyStream {
 
         System.out.println(count);
 
+
+        System.out.println("-------------------Example 3-------------------------");
+
+        List<String> nameList = Arrays.asList("Tony","Stark","Robert","Downney","Junior");
+
+        Stream<String> stream = nameList.stream();
+        stream.forEach(System.out::println);
+
+        //stream.forEach(System.out::println); //Will throw exception as 'stream' is already comsumed
+
+        Stream<String> stream1 = nameList.stream(); //create new stream1 with same Data source
+        stream1.forEach(System.out::println);
     }
 }
