@@ -1,7 +1,6 @@
 package Java8.StreamAPIs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeWithStream implements Comparable<EmployeeWithStream>{
     private int age;
@@ -89,6 +88,23 @@ public class EmployeeWithStream implements Comparable<EmployeeWithStream>{
         employeeList.stream().
                 sorted((EmployeeWithStream e1, EmployeeWithStream e2) -> e1.getAge()-e2.getAge()).
                 forEach(e -> System.out.println("Employee Details - Using Compartor sorted() : "+e));
+
+        System.out.println("---------------------------------------------------------");
+
+        employeeList.stream().
+                sorted((EmployeeWithStream e1, EmployeeWithStream e2) -> e1.getEmpId()-e2.getEmpId()).
+                forEach(e -> System.out.println("Employee Details - Using Compartor sorted() : "+e));
+
+
+        System.out.println("---------------------------------------------------------");
+
+        int sum = Arrays.stream(new int[] {7, 5, 9, 2, 8, 1}).
+                reduce(100 ,(a,b) -> a+b);
+        System.out.println("Sum with Initial Value : "+sum);
+
+        OptionalInt sumWithInitialValue = Arrays.stream(new int[] {7, 5, 9, 2, 8, 1}).
+                reduce((a,b) -> a+b);
+        System.out.println("Sum without Initial Value : "+sumWithInitialValue.getAsInt());
     }
 
 }
