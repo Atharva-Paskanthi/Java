@@ -13,10 +13,10 @@ public class CollectorClassMethods {
         names.add("David");
         names.add("Johnson");
         names.add("Scarlett");
-        names.add("ChristianoRonaldo");
+        names.add("ChristianoCR");
         names.add("Neymar");
         names.add("David");
-        names.add("Beckham12345");
+        names.add("Beckham1234");
         names.add("Chhetri10");
         names.add("Scarlett");
         names.add("RonaldoCR7");
@@ -69,6 +69,16 @@ public class CollectorClassMethods {
                 distinct().
                 collect(Collectors.toMap(s -> s.length(), Function.identity()));
         System.out.println("Length & Unique names - Map - (by Using Stream) : "+mapUsingStream);
+
+        Map<Integer,String> mapUsingStream1 = names.stream().
+                distinct().
+                collect(Collectors.toMap(s -> map1.containsKey(s) ? s.hashCode() : s.length(), Function.identity()));
+        System.out.println("Length & Unique names - Map - (by Using Stream) : "+mapUsingStream1);
+
+        Map<Integer,String> mapUsingStream2 = names.stream().
+                distinct().
+                collect(Collectors.toMap(s -> s.length(), s -> s));
+        System.out.println("Length & Unique names - Map - (by Using Stream) : "+mapUsingStream2);
 
 
     }
