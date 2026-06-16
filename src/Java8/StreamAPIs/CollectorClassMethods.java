@@ -1,9 +1,7 @@
 package Java8.StreamAPIs;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CollectorClassMethods {
@@ -15,13 +13,13 @@ public class CollectorClassMethods {
         names.add("David");
         names.add("Johnson");
         names.add("Scarlett");
-        names.add("Ronaldo");
+        names.add("ChristianoRonaldo");
         names.add("Neymar");
         names.add("David");
-        names.add("Beckham");
-        names.add("Chhetri");
+        names.add("Beckham12345");
+        names.add("Chhetri10");
         names.add("Scarlett");
-        names.add("Ronaldo");
+        names.add("RonaldoCR7");
 
         //List of length of each element
         List<Integer> namesLength = names.stream().
@@ -57,6 +55,21 @@ public class CollectorClassMethods {
         System.out.println("Unique Elements - List - (by Using distinct method in Stream) : "+distinctNames);
 
         System.out.println("------------------------------------------------------------");
+
+        Map<Integer,String> map1 = new HashMap<>();
+
+        for(String s : names){
+            map1.put(s.length(), s);
+        }
+        System.out.println("Length & Unique names - Map - (by using Collecction Framework) : "+map1);
+
+        System.out.println("------------------------------------------------------------");
+
+        Map<Integer,String> mapUsingStream = names.stream().
+                distinct().
+                collect(Collectors.toMap(s -> s.length(), Function.identity()));
+        System.out.println("Length & Unique names - Map - (by Using Stream) : "+mapUsingStream);
+
 
     }
 }
