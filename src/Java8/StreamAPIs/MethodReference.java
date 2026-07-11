@@ -12,6 +12,12 @@ public class MethodReference {
 
     public static void main(String[] args) {
 
+        TwoParamFunction interfaceRef = (int a, int b) ->{
+            return a + b + 100;
+        };
+
+        System.out.println("--------------------------------------------------------------");
+
         Function<String, Integer> lamdaFunction1 = (String s) -> Integer.parseInt(s);
         System.out.println(lamdaFunction1.apply("12"));
 
