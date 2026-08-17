@@ -1,0 +1,22 @@
+1) Arithmetic Operators
++
+-
+*
+/
+%
+
+2) Assignment Operators
+=
+==
++=
+-=
+/=
+*=
+%=
+
+3) Unary Operators
+
+--> Unary operators increment or decrement value by 1
+++a  //pre increment
+a++ //post increment
+

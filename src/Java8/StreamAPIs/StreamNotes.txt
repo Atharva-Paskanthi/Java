@@ -1,0 +1,11 @@
+Streams :
+https://javaconceptoftheday.com/java-8-streams-beginners-guide/
+
+Collectors :
+https://javaconceptoftheday.com/java-8-collectors-tutorial/
+
+
+
+
+Lazy/Late   => Loads or gives output only when demanded or asked
+Early/Eager => Loads or gives output before asking or demanding

@@ -1,0 +1,5 @@
+
+1)if
+2)if-else
+3)if-else-if
+4)switch
