@@ -3,7 +3,9 @@ database interactions by mapping Java classes directly to database tables. It se
 Java code and relational databases (like MySQL, PostgreSQL, or Oracle), eliminating the need to write complex,
 boilerplate JDBC code and manual SQL queries
 
+
 Core Concepts & Architecture
+
 Hibernate implements the Jakarta Persistence API (JPA) specification, acting as the underlying engine that makes data
 management seamless. It achieves this through several critical components:
 
@@ -13,6 +15,7 @@ and dialect options.
 - SessionFactory: A thread-safe, heavy object created once during application startup used to generate database sessions.
 - Session: A short-lived, single-threaded context used to execute CRUD (Create, Read, Update, Delete) tasks.
 - Transaction Management: Built-in safeguards that guarantee data integrity by wrapping multi-step database writes securely.
+
 
 Key Features and Benefits
 
