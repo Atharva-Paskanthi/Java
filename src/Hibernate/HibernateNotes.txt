@@ -1,0 +1,28 @@
+Hibernate is an open-source, lightweight Object-Relational Mapping (ORM) framework for Java that simplifies
+database interactions by mapping Java classes directly to database tables. It serves as a bridge between object-oriented
+Java code and relational databases (like MySQL, PostgreSQL, or Oracle), eliminating the need to write complex,
+boilerplate JDBC code and manual SQL queries
+
+Core Concepts & ArchitectureHibernate implements the Jakarta Persistence API (JPA) specification, acting as the
+underlying engine that makes data management seamless. It achieves this through several critical components:
+
+- Entities: Standard Java POJOs (Plain Old Java Objects) annotated with @Entity to link them to database tables.
+- Configuration: Setup managed via a file like hibernate.cfg.xml containing database URLs, credentials,
+and dialect options.
+- SessionFactory: A thread-safe, heavy object created once during application startup used to generate database sessions.
+- Session: A short-lived, single-threaded context used to execute CRUD (Create, Read, Update, Delete) tasks.
+- Transaction Management: Built-in safeguards that guarantee data integrity by wrapping multi-step database writes securely.
+
+Key Features and Benefits
+
+- Database Independence: Uses unique SQL "dialects" to automatically translate commands into the exact syntax required by
+your target database system.
+- Object-Oriented Queries: Features Hibernate Query Language (HQL) to let you write database-agnostic queries based on your
+Java class and property names rather than rigid database column rules.
+- Performance Caching: Utilizes dual-layer caching (First-level and Second-level) to store frequently accessed data in
+memory and reduce heavy database loads.
+- Schema Generation: Automatically creates, alters, or updates your physical database tables directly from your written
+Java code structures.
+- Lazy Loading: Delays the retrieval of related child data from the database until the application explicitly asks for it,
+saving vital system memory.
+

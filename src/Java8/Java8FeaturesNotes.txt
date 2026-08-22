@@ -7,5 +7,3 @@ Java8 Features
 5) Optional Class
 
 Java made functional language => Lambda Expression
-
-Git
